@@ -1,1 +1,4 @@
 kubernetes/chart/charts/*.tgz
+data
+uploads
+.env*

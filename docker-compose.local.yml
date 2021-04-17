@@ -1,0 +1,11 @@
+version: "3"
+services:
+  app:
+    expose:
+      - 3000
+    env_file:
+      - .env.local
+networks:
+  default:
+    external:
+      name: nginx-proxy
