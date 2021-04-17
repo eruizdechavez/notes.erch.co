@@ -5,8 +5,13 @@ services:
     restart: always
     env_file:
       - .env
-    ports:
-      - 3000:3000
+    expose:
+      - 3000
     volumes:
-      - ./data:/hedgedoc/data
-      - ./uploads:/hedgedoc/public/uploads
+      - ./data:/hedgedoc/data:rw
+      - ./uploads:/hedgedoc/public/uploads:rw
+
+networks:
+  default:
+    external:
+      name: nginx-proxy
